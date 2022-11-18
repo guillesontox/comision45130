@@ -1,36 +1,42 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
+    box-sizing: border-box;}
+    body{
+        display: grid;
+        min-height: 100vh;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+                "header header header"
+                "main main main"
+                "footer footer footer";}
 /*------------------------------------Header------------------------------------*/
 header{
-    display: flex;
-    
-}
+    background-color: #737CA1;
+    justify-content: space-between;
+    align-items: center;
+    display: grid;
+    grid-area: header;
+    grid-template-areas: 
+            "img titulo nav";}
 nav ul li{
-    list-style-type: none;
-}
+    list-style-type: none;}
 ul{
-    display: flex;
-}
+    display: flex;}
 .logoPpal{
     border: 0;
     padding: 0;
     margin: 0;
     height: 50px;
     width: auto;
-}
-header{
-    background-color: #737CA1;
-    justify-content: space-between;
-    align-items: center;
-}
+    grid-area: img;}
 .tituloPpal{
     font-family: serif;
     font-size: 70px;
     color: white;
-}
+    grid-area: titulo;}
+nav{
+    grid-area: nav;}
 .button{
     font-family: Arial;
     color: #000000;
@@ -41,53 +47,78 @@ header{
     -moz-border-radius: 28px;
     border-radius: 28px;
     border: solid #000000 2px;
-    background: #ffde59;
-}
+    background: #ffde59;}
 .button:hover {
-    background: #ffffff;
+    background: #ffffff;}
+@media (max-width:460px){
+    .logoPpal{
+        border: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;}
+    .tituloPpal{display: none;}
+    ul{
+        width: 100%;
+        display: flex;
+        justify-content: center;}
+    main{display: block;}
 }
 /*------------------------------------Main------------------------------------*/
 main{
     background-color: #4863A0;
-    display: flex;
-    justify-content:center;
-    display: block;
+    grid-area: main;}
+.index{
+    width: 100%;
+    display: grid;
+    grid-area: main;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-areas:
+            "imgbran parr parr";}
+.fratelli{
+    display: grid;
+    grid-template-areas: 
+            "brvideo"
+            "brsab"
+            "brley";
 }
 .imgBranca{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
-}
+    height: 500px;
+    width: auto;
+    grid-area: imgbran;}
 .descripcion{
     height: 100%;
     width: 100%;
-    align-items:flex-end;
+    display: flex;
     font-size: 30px;
     padding: 20px;
     padding-top: 100px;
     padding-right: 100px;
     color: white;
-}
+    grid-area: parr;}
 .videoPresentacion{
     width: 100%;
-}
+    grid-area: brvideo;}
 .bC{
-    display: block;
-}
+    display: block;}
 .bM{
 width: 280px;
-height: auto;
-}
+height: auto;}
 .bR{
 width: 350px;
-height: auto;
-}
+height: auto;}
 .brancaSabores{
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
+    padding: 20px;
+    border:3px solid rgb(255, 255, 255);
+    border-radius:22px;
+    grid-area: brsab;}
 .leyendaBranca{
     display: flex;
     justify-content: space-around;
@@ -95,15 +126,14 @@ height: auto;
     font-size: 30px;
     font-family: Arial;
     color: white;
-}
+    grid-area: brley;}
 .coloresHuggies{
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
     border:3px solid rgb(255, 255, 255);
-    border-radius:22px;
-}
+    border-radius:22px;}
 .leyendaHuggies{
     display: flex;
     justify-content: space-around;
@@ -111,13 +141,11 @@ height: auto;
     font-size: 30px;
     font-family: Arial;
     font-weight: bold;
-    padding: 20px;
-}
+    padding: 20px;}
 .videoHuggies{
     display: flex;
     justify-content: center;
-    padding: 40px;
-}
+    padding: 40px;}
 .descripcionHuggies{
     display: flex;
     justify-content: space-around;
@@ -125,60 +153,51 @@ height: auto;
     font-size: 20px;
     font-family: Arial;
     justify-content: space-around;
-    align-items: center;
-}
+    align-items: center;}
 .p1{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 70%;
-    color: white;
-}
+    color: white;}
 .p2{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 70%;
-    color: white;
-}
+    color: white;}
 .p3{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 70%;
-    color: white;    
-}
+    color: white;}
 .videoTabaco{
     display: flex;
     justify-content: center;
-    padding: 40px;
-}
+    padding: 40px;}
 .descripcionTabaco{
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
     border:3px solid rgb(255, 255, 255);
-    border-radius:22px;
-}
+    border-radius:22px;}
 .logoLucky{
     width: 8%;
-    height: auto;
-}
+    height: auto;}
 /*------------------------------------Footer------------------------------------*/
 footer{
     background-color: #2B547E;
-    display: block;
-}
+    display: grid;
+    grid-area: footer;}
 .tituloRrss{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-}
+    padding: 10px;}
 .rrss{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-}
+    padding: 10px;}
